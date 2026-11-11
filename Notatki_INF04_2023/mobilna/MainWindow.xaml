@@ -1,0 +1,55 @@
+<Window x:Class="NotatkiApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Notatki - Wykonał Mateusz Golnau" 
+        Height="550" Width="360"
+        Background="#F5F5F5"
+        WindowStartupLocation="CenterScreen">
+    <DockPanel Margin="15">
+        <!-- Górny układ liniowy (horyzontalny): Pole edycyjne + Przycisk DODAJ -->
+        <Grid DockPanel.Dock="Top" Margin="0,0,0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="TxtNowyElement" 
+                     Grid.Column="0" 
+                     FontSize="14" 
+                     Padding="6" 
+                     VerticalContentAlignment="Center" 
+                     Margin="0,0,8,0"
+                     GotFocus="TxtNowyElement_GotFocus"
+                     LostFocus="TxtNowyElement_LostFocus"
+                     Text="Nowy element" 
+                     Foreground="Gray"/>
+
+            <Button x:Name="BtnDodaj" 
+                    Grid.Column="1" 
+                    Content="DODAJ" 
+                    Background="#DC143C" 
+                    Foreground="White" 
+                    FontWeight="Bold" 
+                    FontSize="14" 
+                    Padding="15,6" 
+                    BorderThickness="0" 
+                    Click="BtnDodaj_Click"/>
+        </Grid>
+
+        <!-- Widok Listy Notatek (z separatorem w kolorze Crimson) -->
+        <ListView x:Name="LstNotatki" 
+                  BorderBrush="#DC143C" 
+                  BorderThickness="1" 
+                  FontSize="14" 
+                  Background="White">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Padding" Value="8"/>
+                    <Setter Property="BorderBrush" Value="#DC143C"/>
+                    <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                    <Setter Property="Foreground" Value="#DC143C"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </DockPanel>
+</Window>
