@@ -1,0 +1,41 @@
+<Window x:Class="SzyfrCezara.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Szyfrowanie. Wykonane przez Mateusz Golnau" 
+        Height="500" Width="700"
+        Background="#5F9EA0"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Lewa kolumna: Wejście -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Podaj wartość klucza" Foreground="#FAEBD7" FontSize="16" FontWeight="Bold" Margin="0,0,0,5"/>
+        <TextBox x:Name="TxtKlucz" Grid.Row="1" Grid.Column="0" Width="80" HorizontalAlignment="Left" FontSize="14" Padding="5" Margin="0,0,0,15"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Podaj tekst" Foreground="#FAEBD7" FontSize="16" FontWeight="Bold" Margin="0,0,0,5"/>
+        <TextBox x:Name="TxtTekst" Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" FontSize="14" Padding="5"/>
+
+        <!-- Środek: Przycisk Zaszyfruj -->
+        <Button x:Name="BtnZaszyfruj" Grid.Row="3" Grid.Column="1" Content="Zaszyfruj" Background="#ADD8E6" Foreground="Black" FontWeight="Bold" FontSize="14" Padding="15,10" VerticalAlignment="Center" Margin="15,0" Click="BtnZaszyfruj_Click"/>
+
+        <!-- Prawa kolumna: Wyjście -->
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Tekst zaszyfrowany" Foreground="#FAEBD7" FontSize="16" FontWeight="Bold" Margin="0,0,0,5"/>
+        <Border Grid.Row="1" Grid.RowSpan="3" Grid.Column="2" BorderBrush="#FAEBD7" BorderThickness="2" CornerRadius="10" Background="Transparent" Padding="5">
+            <TextBox x:Name="TxtWynik" Foreground="#F0F8FF" Background="Transparent" BorderThickness="0" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Auto" FontSize="16"/>
+        </Border>
+
+        <!-- Dół: Przycisk Zapisz w pliku -->
+        <Button x:Name="BtnZapisz" Grid.Row="4" Grid.Column="2" Content="Zapisz szyfr w pliku" Background="#ADD8E6" Foreground="Black" FontWeight="Bold" FontSize="14" Padding="15,8" HorizontalAlignment="Right" Margin="0,15,0,0" Click="BtnZapisz_Click"/>
+    </Grid>
+</Window>
