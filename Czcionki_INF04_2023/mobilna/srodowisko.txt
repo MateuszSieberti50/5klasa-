@@ -1,0 +1,2 @@
+Nazwa środowiska programistycznego: Visual Studio 2022 / Visual Studio Code
+Nazwa emulowanego urządzenia lub systemu: Android Emulator (Nexus 5X API 29) / Windows Desktop Runtime WPF
