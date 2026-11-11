@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <!-- UseAppHost=false chroni przed zablokowaniem uruchamiania przez Smart App Control / Defender -->
+    <UseAppHost>false</UseAppHost>
+  </PropertyGroup>
+
+</Project>
